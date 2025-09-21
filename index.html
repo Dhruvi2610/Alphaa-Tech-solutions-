@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphaa Tech Solutions - BPO Services</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      background: #020617;
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* BACKGROUND */
+    #parallax-bg { position: fixed; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+    .layer { position: absolute; inset: 0; }
+    .stars span { position: absolute; width: 3px; height: 3px; background: white; border-radius: 50%; opacity: 0.8; }
+    .orb { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(59,130,246,0.5), transparent); filter: blur(40px); }
+
+    /* CIRCUIT LINES */
+    .circuit { position: absolute; inset: 0; z-index: 0; opacity: 0.2; }
+    .circuit path { stroke: #22d3ee; stroke-width: 1.5; fill: none; stroke-dasharray: 5 10; animation: draw 10s linear infinite; }
+    @keyframes draw { to { stroke-dashoffset: -1000; } }
+
+    /* NAVBAR */
+    .navbar { position: fixed; top: 20px; left: 20px; z-index: 99; }
+    .hamburger { width: 30px; height: 22px; position: relative; cursor: pointer; }
+    .hamburger span { position: absolute; height: 3px; width: 100%; background: white; border-radius: 2px; left: 0; transition: 0.4s; }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 9px; }
+    .hamburger span:nth-child(3) { top: 18px; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    .menu {
+      position: fixed;
+      left: -220px;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      background: rgba(15,23,42,0.95);
+      transition: left 0.4s;
+      padding: 60px 20px;
+      z-index: 98;
+    }
+    .menu a { display: block; margin: 20px 0; font-size: 18px; }
+    .menu.active { left: 0; }
+
+    /* HERO */
+    .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; z-index: 1; }
+    .hero h1 { font-size: 3.5rem; background: linear-gradient(90deg, #2563eb, #22d3ee, #8b5cf6); -webkit-background-clip: text; color: transparent; }
+    .hero p { margin: 20px 0; font-size: 1.3rem; opacity: 0.85; }
+    .btn { margin: 10px; padding: 12px 25px; border-radius: 30px; border: none; cursor: pointer;
+      background: linear-gradient(90deg, #2563eb, #22d3ee); color: white; font-weight: bold; transition: 0.3s; }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 15px #22d3ee; }
+
+    /* SECTIONS */
+    section { padding: 100px 20px; position: relative; z-index: 1; }
+    section h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+
+    /* SERVICES */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px;
+      backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);
+      text-align: center; transition: 0.5s; opacity: 0; transform: translateY(50px); }
+    .card.show { opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-10px) scale(1.02); border-color: #22d3ee; }
+
+    /* ICONS GLOW */
+    .card i {
+      font-size: 42px;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #22d3ee, #8b5cf6, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: iconGlow 4s ease-in-out infinite alternate;
+    }
+    @keyframes iconGlow {
+      0% { text-shadow: 0 0 10px #22d3ee; }
+      50% { text-shadow: 0 0 20px #8b5cf6, 0 0 40px #2563eb; }
+      100% { text-shadow: 0 0 15px #22d3ee, 0 0 30px #8b5cf6; }
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .testimonial { flex: 1 1 280px; background: rgba(255,255,255,0.05);
+      padding: 25px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);
+      text-align: center; opacity: 0; transform: translateY(50px); transition: 0.5s; }
+    .testimonial.show { opacity: 1; transform: translateY(0); }
+    .testimonial img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 25px; background: #0f172a; font-size: 14px; }
+
+    /* CHATBOT WITH ORBIT EFFECT */
+    .chatbot {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 70px;
+      height: 70px;
+      background: radial-gradient(circle, #2563eb, #1e40af);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      z-index: 99;
+      box-shadow: 0 0 30px rgba(37,99,235,0.9);
+      overflow: visible;
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px #22d3ee; }
+      50% { box-shadow: 0 0 40px #8b5cf6, 0 0 60px #22d3ee; }
+      100% { box-shadow: 0 0 20px #2563eb; }
+    }
+    .chatbot::before,
+    .chatbot::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .chatbot::before {
+      width: 110px; height: 110px;
+      border: 2px solid rgba(34,211,238,0.5);
+      animation: orbit1 6s linear infinite;
+    }
+    .chatbot::after {
+      width: 140px; height: 140px;
+      border: 2px solid rgba(139,92,246,0.4);
+      animation: orbit2 10s linear infinite reverse;
+    }
+    @keyframes orbit1 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes orbit2 {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="#services">Our Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- PARALLAX BG -->
+  <div id="parallax-bg">
+    <div class="layer stars" id="stars"></div>
+    <div class="layer orb" style="width:300px;height:300px;top:20%;left:10%;"></div>
+    <div class="layer orb" style="width:400px;height:400px;bottom:10%;right:15%;background:radial-gradient(circle,rgba(139,92,246,0.5),transparent);"></div>
+    <svg class="circuit" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+      <path d="M 0 200 L 400 200 L 500 400 L 900 400" />
+      <path d="M 1920 800 L 1500 800 L 1400 600 L 1000 600" />
+      <path d="M 600 1000 L 600 700 L 800 500 L 1200 500" />
+      <path d="M 200 300 L 200 600 L 400 800 L 600 800" />
+    </svg>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Alphaa Tech Solutions</h1>
+    <p>Your trusted partner for next-gen <b>BPO & Customer Support Solutions</b></p>
+    <div>
+      <button class="btn">Explore Services</button>
+      <button class="btn">Get a Free Consultation</button>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our BPO Services</h2>
+    <div class="services">
+      <div class="card"><i class="fas fa-headset"></i><h3>Customer Support</h3><p>24/7 multilingual voice, chat & email support.</p></div>
+      <div class="card"><i class="fas fa-chart-line"></i><h3>Business Process Outsourcing</h3><p>Streamline operations with scalable back-office solutions.</p></div>
+      <div class="card"><i class="fas fa-database"></i><h3>Data Processing</h3><p>Accurate, efficient, and secure data management.</p></div>
+      <div class="card"><i class="fas fa-handshake"></i><h3>Client Relationship Management</h3><p>Enhancing customer satisfaction & retention.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="testimonial"><img src="https://via.placeholder.com/60" alt=""><p>"Their customer support team transformed our client satisfaction rates!"</p><strong>- Sarah, COO</strong></div>
+      <div class="testimonial"><img src="https://via.placeholder.com/60" alt=""><p>"Outsourcing with Alphaa Tech saved us 40% in operational costs."</p><strong>- John, CEO</strong></div>
+      <div class="testimonial"><img src="https://via.placeholder.com/60" alt=""><p>"Truly reliable BPO partner with excellent turnaround times."</p><strong>- Priya, Operations Head</strong></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>Contact: info@alphaa-tech.com | +91 98765 43210</p>
+    <p>© 2025 Alphaa Tech Solutions - All Rights Reserved</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="chatbot"><i class="fas fa-comments"></i></div>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const burger = document.getElementById('hamburger');
+      burger.classList.toggle("active");
+      menu.classList.toggle("active");
+    }
+
+    // Close menu when a link is clicked
+    document.querySelectorAll("#menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("active");
+        document.getElementById("hamburger").classList.remove("active");
+      });
+    });
+
+    // Generate stars
+    const stars = document.getElementById("stars");
+    for (let i = 0; i < 80; i++) {
+      const s = document.createElement("span");
+      s.style.left = Math.random() * 100 + "%";
+      s.style.top = Math.random() * 100 + "%";
+      stars.appendChild(s);
+    }
+
+    // Parallax scroll
+    const layers = document.querySelectorAll(".layer");
+    window.addEventListener("scroll", () => {
+      let y = window.scrollY;
+      layers.forEach((layer, idx) => {
+        let speed = (idx + 1) * 0.15;
+        layer.style.transform = `translateY(${y * speed}px)`;
+      });
+    });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll(".card,.testimonial");
+    window.addEventListener("scroll", () => {
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
