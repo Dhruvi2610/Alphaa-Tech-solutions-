@@ -161,7 +161,7 @@ body {
 .hero-bg {
   position:absolute;
   inset:0;
-  background: url('Bbg.gif') center/cover no-repeat;
+  background: url('bbg.gif') center/cover no-repeat;
   z-index:0;
   transform-origin:center;
   will-change:transform;
