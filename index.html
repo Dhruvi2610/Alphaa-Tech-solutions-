@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alphaa Tech Solution — BPO Services</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">  
+</head>
+<body>
+<!-- RIGHT-SLIDE POPUP -->
+<div id="right-popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h4>Welcome to Alphaa Tech Solution</h4>
+    <p>How may we assist you today?</p>
+    <a href="tel:9930385749" class="btn-primary">Contact Us</a>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+#right-popup {
+  position: fixed;
+  top: 20%;
+  right: -320px; /* hidden initially */
+  width: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,0,0,0.2);
+  padding: 1.5rem;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  transition: right 0.5s ease;
+}
+
+#right-popup.active {
+  right: 20px; /* slides in */
+}
+
+.popup-content h4 {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #ff7a00;
+  font-weight: 600;
+}
+
+.popup-content p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.popup-content .btn-primary {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #ff7a00, #ffa64d);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.popup-content .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255,122,0,0.6);
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #ff7a00;
+}
+</style>
+
+<!-- JS -->
+<script>
+window.addEventListener('load', () => {
+  const popup = document.getElementById('right-popup');
+  const closeBtn = popup.querySelector('.close-btn');
+
+  setTimeout(() => {
+    popup.classList.add('active'); // show popup after 0.8s
+  }, 800);
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('active'); // close popup
+  });
+});
+</script>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <img src="logo.jpg" alt="Alphaa Tech Logo" class="logo-img">
+    <div class="nav-center">
+      <span class="brand-name">ALPHAA TECH SOLUTION</span>
+    </div>
+    <button id="hamburger" class="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- MENU OVERLAY -->
+<div id="menu-overlay">
+  <button id="menu-close" class="menu-close"><i class="fas fa-times"></i></button>
+  <ul class="menu-list">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="career.html">Careers</a></li>
+    <li><a href="#footer-bottom">Contact</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<header id="home" class="hero-section">
+    
+  <div class="hero-bg"></div>
+  <div class="hero-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="typing-line"></h1>
+    <p class="hero-sub">Streamlining processes, reducing costs, and driving growth for businesses in the United States.</p>
+    <div class="hero-ctas">
+      <a href="tel:9930385749" class="btn-primary">Book a Consultation</a>
+      
+    </div>
+  </div>
+</header>
+ <!-- ABOUT -->    <section id="about" class="fade-in-section">  
+    <h2>About Us</h2>  
+    <p>  
+      A Baroda-based Business Process Outsourcing company with proven expertise in supporting US businesses across multiple industries.  
+      We deliver reliable, cost-effective, and scalable outsourcing solutions with strong focus on quality, transparency, and global standards.  
+    </p>  
+    
+
+</section>  
+<section id="services" class="fade-in-section">  
+    <h2>Services We Provide</h2>  
+    <div class="services-grid">  
+        
+        <article class="card-3d fade-in-item">  
+            <h3>⚙️ Business Process Management</h3>  
+            <p>Streamline your operations with our comprehensive BPM solutions, designed to optimize workflows and enhance efficiency across all departments.</p>  
+        </article>  
+
+        <article class="card-3d fade-in-item">  
+            <h3>⚖️ Legal Process Outsourcing</h3>  
+            <p>Expert legal support services that reduce costs while maintaining the highest quality standards for contract management, research, and compliance.</p>  
+        </article>  
+
+        <article class="card-3d fade-in-item">  
+            <h3>💻 Information Technology</h3>  
+            <p>Cutting-edge IT solutions that leverage the latest technologies to drive innovation, enhance security, and facilitate digital transformation.</p>  
+        </article>  
+
+        <article class="card-3d fade-in-item">  
+            <h3>🧠 AI Hybrid Outsourcing (BPO)</h3>  
+            <p>We integrate AI, ML, and RPA into our BPO delivery to maximize efficiency...</p>  
+        </article>  
+
+        <article class="card-3d fade-in-item">  
+            <h3>📡 IT & Data Center BPO</h3>  
+            <p>Ensure continuous operation and security by outsourcing your core IT infrastructure...</p>  
+        </article>  
+
+        <article class="card-3d fade-in-item">  
+            <h3>🌱 Agritech </h3>We are developing proprietary systems and solutions that utilize advanced techniques (such as AI, IoT, or specific biotech methods) to enhance crop yield, resource efficiency, and farm management.</p>  
+        </article>  
+
+    </div>
+</section> 
+<section id="why-us" class="fade-in-section">
+    <div class="background-overlay">
+    <h2>Why Choose Us</h2>
+    <p>Discover the core advantages of partnering with us, structured for clear decision-making.</p> 
+    
+    <div class="timeline">
+        
+        <div class="traveling-dot"></div> 
+        
+        <div class="timeline-item fade-in-item" data-index="0">
+            <div class="timeline-content">
+                <i class="fa-solid fa-sack-dollar timeline-icon"></i>
+                <h3>Cost Optimization</h3>
+                <p>Reduce operational costs by up to 70% while maintaining or improving service quality and business outcomes.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item fade-in-item" data-index="1">
+            <div class="timeline-content">
+                <i class="fa-solid fa-globe timeline-icon"></i>
+                <h3>Global Talent Access</h3>
+                <p>Leverage our worldwide network of skilled professionals to find the perfect fit for your specific business needs.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item fade-in-item" data-index="2">
+            <div class="timeline-content">
+                <i class="fa-solid fa-scale-unbalanced-flip timeline-icon"></i>
+                <h3>Scalable Operations</h3>
+                <p>Quickly scale your operations up or down based on demand without the constraints of traditional hiring processes.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item fade-in-item" data-index="3">
+            <div class="timeline-content">
+                <i class="fa-solid fa-bullseye timeline-icon"></i>
+                <h3>Focus on Core Business</h3>
+                <p>Delegate non-core functions to our specialists while your team concentrates on strategic initiatives and growth.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item fade-in-item" data-index="4">
+            <div class="timeline-content">
+                <i class="fa-regular fa-clock timeline-icon"></i>
+                <h3>24/7 Service Delivery</h3>
+                <p>Benefit from round-the-clock operations across different time zones for continuous productivity and support.</p>
+            </div>
+        </div>
+        
+    </div>
+    </section>
+   
+<section id="clients" class="clients-section">
+  <h2>Happy Clients</h2>
+
+  <div class="slider-container">
+
+    <button class="arrow left" onclick="moveSlide(-1); return false;">&#10094;</button>
+
+    <div class="testimonials-wrapper">
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+            <i class="fa fa-user-circle profile-icon"></i> 
+            <p>“Great communication and on-time delivery even across timezones.”</p>
+            <h4>Sara Khan</h4>
+            <span>Project Manager, RetailPlus</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+            <i class="fa fa-user-circle profile-icon"></i> 
+            <p>“Clear SLAs and rapid escalation — onboarding was smooth.”</p>
+            <h4>Alok Verma</h4>
+            <span>Legal Ops, LexCorp</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+            <i class="fa fa-user-circle profile-icon"></i> 
+            <p>“The team handled sensitive data professionally and improved accuracy by 28%.”</p>
+            <h4>Rohan Gupta</h4>
+            <span>Data Lead, MediServe</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+            <i class="fa fa-user-circle profile-icon"></i> 
+            <p>“We reduced processing time by 42% — support was fast and reliable.”</p>
+            <h4>Priya Sharma</h4>
+            <span>Head Ops, Acme Fin</span>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="arrow right" onclick="moveSlide(1); return false;">&#10095;</button>
+
+  </div>
+
+  <div class="dots">
+    <span class="dot active" onclick="currentSlide(1); return false;"></span>
+    <span class="dot" onclick="currentSlide(2); return false;"></span>
+    <span class="dot" onclick="currentSlide(3); return false;"></span>
+    <span class="dot" onclick="currentSlide(4); return false;"></span>
+  </div>
+</section>
+
+
+<h3>Book an Appointment</h3>  
+<form id="appointment-form">  
+  <input name="name" type="text" placeholder="Name" required>  
+  <input name="email" type="email" placeholder="Email" required>  
+  <input name="phone" type="tel" placeholder="Phone" required>  
+  <textarea name="business" placeholder="Business Needs"></textarea>  
+  <button type="submit" class="btn-primary">Submit</button>  
+</form> 
+
+  
+
+<section id="footer-bottom">
+<footer class="clean-footer">
+
+  <div class="footer-content">
+    <h2>Contact & Location</h2>
+
+    <div class="footer-item">
+      <i class="fas fa-phone"></i>
+      <span>+91 12345 67890</span>
+    </div>
+
+    <div class="footer-item">
+      <i class="fas fa-envelope"></i>
+      <span>contact@alphaa.tech</span>
+    </div>
+
+    <div class="footer-item">
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/919876543210">+91 98765 43210</a>
+    </div>
+
+    <div class="footer-item">
+      <i class="fab fa-instagram"></i>
+      <a href="https://instagram.com/alphaa.techsolution">@alphaa.techsolution</a>
+    </div>
+
+    <div class="map-box">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.0487316756303!2d73.15584937506972!3d22.313996679676773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc93a2023e4d7%3A0x596ae15b20fd8bf6!2sSNOOKER%20STREET!5e0!3m2!1sen!2sin!4v1764231758621!5m2!1sen!2sin"
+        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+
+  <p class="footer-bottom">
+    © 2025 Alphaa Tech Solutions — All Rights Reserved
+  </p>
+
+</footer>
+<!-- JS -->
+<script>
+  // Navbar scroll hide/show
+  let lastScrollTop = 0;
+  const navbar = document.getElementById("navbar");
+  const scrollThreshold = 80; // how far to scroll before hiding
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+      // scrolling down
+      navbar.style.transform = "translateY(-100%)";
+      navbar.style.transition = "transform 0.4s ease";
+    } else {
+      // scrolling up
+      navbar.style.transform = "translateY(0)";
+      navbar.style.transition = "transform 0.4s ease";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const menu = document.getElementById('menu-overlay');
+const menuClose = document.getElementById('menu-close');
+
+hamburger.addEventListener('click', () => menu.classList.toggle('active'));
+menuClose.addEventListener('click', () => menu.classList.remove('active'));
+
+// Close menu automatically when clicking any menu item
+document.querySelectorAll('#menu-overlay a').forEach(link => {
+  link.addEventListener('click', () => menu.classList.remove('active'));
+});
+
+  // Typing effect
+  const typingElement = document.querySelector(".typing-line");
+  const lines = ["Streamline Your BPO Solutions", "Boost Your Business Efficiency", "Alphaa Tech Solution"];
+  const typingSpeed = 80;
+  const delayBetweenLines = 1500;
+  let lineIndex = 0;
+
+  function typeLine() {
+    let line = lines[lineIndex];
+    let charIndex = 0;
+    typingElement.textContent = "";
+    const typeChar = () => {
+      if (charIndex < line.length) {
+        typingElement.textContent += line[charIndex];
+        charIndex++;
+        setTimeout(typeChar, typingSpeed);
+      } else {
+        setTimeout(() => {
+          lineIndex = (lineIndex + 1) % lines.length;
+          typeLine();
+        }, delayBetweenLines);
+      }
+    };
+    typeChar();
+  }
+  typeLine();
+</script>
+<script>
+  // Sci-fi Fade-In Scroll Effect
+  const sections = document.querySelectorAll('.fade-in-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible'); // optional (re-hide)
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  sections.forEach(section => observer.observe(section));
+  
+  
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = {
+    root: null, // relative to the viewport
+    rootMargin: '0px',
+    threshold: 0.2 // Trigger when 20% of the item is visible
+  };
+
+  function observerCallback(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Stop observing once visible
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  // Target all elements with the 'fade-in-item' class
+  const fadeItems = document.querySelectorAll('.fade-in-item');
+  fadeItems.forEach(item => {
+    observer.observe(item);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const timeline = document.querySelector('.timeline');
+    const items = document.querySelectorAll('.timeline-item');
+    const travelingDot = document.querySelector('.traveling-dot');
+    
+    // 1. Get the vertical position of the line within the timeline container
+    const timelineLineLeft = 0; // The line is set to the far left of the timeline container
+    
+    // Set the initial position of the dot
+    if (items.length > 0) {
+        // Position the dot on the first item's starting position
+        const firstItemTop = items[0].offsetTop + (items[0].querySelector('.timeline-content').offsetHeight / 2) - (travelingDot.offsetHeight / 2);
+        travelingDot.style.top = `${firstItemTop}px`;
+    }
+
+
+    // 2. Create the Observer to detect item visibility
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            
+            // Check if the item is intersecting (visible)
+            if (entry.isIntersecting) {
+                const item = entry.target;
+                
+                // Add 'visible' class to trigger content animations/styles
+                item.classList.add('visible');
+
+                // CALCULATE DOT POSITION:
+                
+                // 1. Get the vertical offset of the current item relative to the timeline container
+                const itemTop = item.offsetTop;
+                
+                // 2. Get the height of the content card
+                const contentHeight = item.querySelector('.timeline-content').offsetHeight;
+                
+                // 3. Calculate the new vertical position for the dot (centered on the content card)
+                // We use offsetTop + (Content Height / 2) - (Dot Height / 2)
+                const dotHeight = travelingDot.offsetHeight;
+                const newDotTop = itemTop + (contentHeight / 2) - (dotHeight / 2);
+
+                // 4. Apply the new position to the traveling dot
+                travelingDot.style.top = `${newDotTop}px`;
+
+            } else {
+                // Optional: Remove 'visible' class if you want the item to disappear when scrolling away
+                // entry.target.classList.remove('visible'); 
+            }
+        });
+    }, {
+        // Root is null (the viewport)
+        rootMargin: '0px',
+        // Trigger when 50% of the content item is visible
+        threshold: 0.5 
+    });
+
+    // Observe every timeline item
+    items.forEach(item => {
+        observer.observe(item);
+    });
+});
+</script>
+
+<a href="https://wa.me/919930385749?text=Hi.%20I%20have%20a%20query" target="_blank" id="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<script>
+    /* JAVASCRIPT LOGIC (Controls slider movement) */
+    let slideIndex = 1;
+    showSlide(slideIndex);
+
+    function moveSlide(n) {
+      showSlide(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlide(slideIndex = n);
+    }
+
+    function showSlide(n) {
+      let slides = document.querySelectorAll(".testimonial-card");
+      let dots = document.querySelectorAll(".dot");
+
+      // Loop logic
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      // Card movement via CSS transform (25% movement for 4 cards)
+      document.querySelector(".testimonials-wrapper").style.transform =
+        "translateX(" + (-(slideIndex - 1) * 25.5) + "%)";
+      
+      // Dot update
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[slideIndex - 1].classList.add("active");
+    }
+</script>
+
+</body>
+
+</html>
