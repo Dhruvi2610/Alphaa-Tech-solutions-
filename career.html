@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Alphaa Tech</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* === Global Styles === */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+    body { background:#fff; color:#333; line-height:1.6; }
+    a { text-decoration:none; color:#ff7a00; }
+    h1,h2,h3 { font-family:'Orbitron',sans-serif; }
+
+    /* === Header === */
+    header {
+      text-align:center;
+      padding:4rem 2rem;
+      background: linear-gradient(145deg, #fffaf3, #fff3e0);
+    }
+    header h1 {
+      font-size:3rem;
+      color:#ff7a00;
+      text-shadow:0 0 10px rgba(255,122,0,0.2);
+      margin-bottom:1rem;
+    }
+    header p {
+      max-width:700px;
+      margin:0 auto;
+      font-size:1.1rem;
+      color:#555;
+    }
+
+    /* === Careers Section === */
+    #careers {
+      max-width:1200px;
+      margin:2rem auto 4rem auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
+      padding:0 2rem;
+    }
+
+    .job-card {
+      background:#fffaf0;
+      border:2px solid #ff7a00;
+      border-radius:18px;
+      padding:2rem;
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 0 15px rgba(255,122,0,0.2);
+      transition:all 0.3s ease;
+    }
+    .job-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(255,122,0,0.4);
+    }
+
+    .job-card h3 {
+      color:#ff7a00;
+      font-size:1.6rem;
+      margin-bottom:1rem;
+    }
+
+    .skills {
+      list-style:none;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:0.6rem;
+      margin-bottom:1.5rem;
+    }
+
+    .skills li {
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      font-size:0.95rem;
+      color:#444;
+    }
+
+    .skills li i {
+      color:#ff7a00;
+      min-width:20px;
+      text-align:center;
+    }
+
+    .apply {
+      display:block;
+      text-align:center;
+      background:#ff7a00;
+      color:#fff;
+      padding:0.85rem 1.8rem;
+      border-radius:12px;
+      font-weight:600;
+      transition:all 0.3s ease;
+    }
+
+    .apply:hover {
+      background:#ff9100;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      header h1 { font-size:2.2rem; }
+      .job-card { padding:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Join Alphaa Tech</h1>
+    <p>If you have these skills, think before the interview, and then send your resume to <a href="mailto:careers@alphaatech.com">careers@alphaatech.com</a></p>
+  </header>
+
+  <!-- Careers Section -->
+  <section id="careers">
+
+    <!-- Role 1 -->
+    <div class="job-card">
+      <h3>US Voice Process (Night Shift) - Process Associate</h3>
+      <ul class="skills">
+        <li><i class="fa fa-briefcase"></i> 0-2 Years of Experience</li>
+        <li><i class="fa fa-comments"></i> Excellent Communication Skills</li>
+        <li><i class="fa fa-graduation-cap"></i> Graduate / Fresher / Experienced</li>
+        <li><i class="fa fa-moon"></i> Able to work in Night Shift</li>
+        <li><i class="fa fa-calendar-check"></i> 5 Days Working (Mon-Fri)</li>
+      </ul>
+      <a href="mailto:careers@alphaatech.com" class="apply">Apply Now</a>
+    </div>
+
+    <!-- Role 2 -->
+    <div class="job-card">
+      <h3>Process Associate - US Voice Process</h3>
+      <ul class="skills">
+        <li><i class="fa fa-briefcase"></i> Min. 1 Year of Experience</li>
+        <li><i class="fa fa-user"></i> Over 21 Years Old</li>
+        <li><i class="fa fa-clock"></i> Available for Full Time</li>
+        <li><i class="fa fa-comments"></i> Strong Communication Skills</li>
+      </ul>
+      <a href="mailto:careers@alphaatech.com" class="apply">Apply Now</a>
+    </div>
+
+    <!-- Role 3 -->
+    <div class="job-card">
+      <h3>Technical Support Executive</h3>
+      <ul class="skills">
+        <li><i class="fa fa-briefcase"></i> 1-3 Years of Experience</li>
+        <li><i class="fa fa-comments"></i> Excellent Problem Solving</li>
+        <li><i class="fa fa-headset"></i> Must handle customer calls</li>
+        <li><i class="fa fa-graduation-cap"></i> Graduate in any stream</li>
+      </ul>
+      <a href="mailto:careers@alphaatech.com" class="apply">Apply Now</a>
+    </div>
+
+    <!-- Add more roles as needed -->
+  </section>
+
+</body>
+</html>
